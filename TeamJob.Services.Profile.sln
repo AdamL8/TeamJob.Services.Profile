@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamJob.Services.Profile", "TeamJob.Services.Profile\TeamJob.Services.Profile.csproj", "{444C29C3-7A5C-447F-98CC-5DF8D0509267}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E450C442-4678-498E-9340-DB4304E60531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{444C29C3-7A5C-447F-98CC-5DF8D0509267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444C29C3-7A5C-447F-98CC-5DF8D0509267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444C29C3-7A5C-447F-98CC-5DF8D0509267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444C29C3-7A5C-447F-98CC-5DF8D0509267}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{444C29C3-7A5C-447F-98CC-5DF8D0509267} = {E450C442-4678-498E-9340-DB4304E60531}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAC62219-7119-4FF5-8835-B9DF40C7A703}
+	EndGlobalSection
+EndGlobal
