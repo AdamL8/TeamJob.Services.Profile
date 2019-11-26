@@ -3,6 +3,7 @@ using Convey.MessageBrokers;
 using Convey.Persistence.MongoDB;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using TeamJob.Services.Profile.Domain;
 using TeamJob.Services.Profile.Events;
@@ -35,10 +36,12 @@ namespace TeamJob.Services.Profile.Commands.Handlers
                 return;
             }
 
+            var associatedTeams = profile.Teams.Select(x => x.Id).ToList();
+
             await _profileRepository.DeleteAsync(InCommand.ProfileId);
 
             _logger.LogInformation($"Profile with ID [{InCommand.ProfileId}] DELETED");
-            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.ProfileId));
+            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.ProfileId, associatedTeams));
         }
     }
 }

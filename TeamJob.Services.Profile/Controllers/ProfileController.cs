@@ -27,8 +27,8 @@ namespace TeamJob.Services.Profile.Controllers
             _queryDispatcher   = InQueryDispatcher;
         }
 
-        // GET api/profile/
-        [HttpGet("{profileId}")]
+        // GET api/profile/get/{profileId}
+        [HttpGet("get/{profileId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProfileDto>> GetProfile([FromRoute]Guid profileId, GetProfile InQuery)
@@ -42,8 +42,8 @@ namespace TeamJob.Services.Profile.Controllers
             return profile;
         }
 
-        // GET api/profile/all
-        [HttpGet("all")]
+        // GET api/profile/getall
+        [HttpGet("getall")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<ProfileDto>>> GetAllProfiles([FromBody] GetProfiles InQuery)
         {
@@ -56,8 +56,8 @@ namespace TeamJob.Services.Profile.Controllers
             return profile.ToList();
         }
 
-        // DELETE api/profile/
-        [HttpDelete("{profileId}")]
+        // DELETE api/profile/delete/{profileId}
+        [HttpDelete("delete/{profileId}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult> DeleteProfile([FromRoute]Guid profileId, DeleteProfile InCommand)
         {
@@ -76,7 +76,7 @@ namespace TeamJob.Services.Profile.Controllers
             return CreatedAtAction(nameof(CreateProfile), InCommand.ProfileId, new { profileId = InCommand.ProfileId });
         }
 
-        // POST api/profile/
+        // POST api/profile/update
         [HttpPut("update")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult> UpdateProfile([FromBody]UpdateProfile InCommand)

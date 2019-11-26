@@ -38,7 +38,8 @@ namespace TeamJob.Services.Profile.Commands.Handlers
             var updatedProfile = new UserProfile(InCommand.ProfileId,
                                                  InCommand.PersonalInformation,
                                                  InCommand.SatisfactionProfile,
-                                                 profile.Role, InCommand.Teams,
+                                                 profile.Role,
+                                                 InCommand.Teams,
                                                  profile.CreatedAt);
 
             await _profileRepository.UpdateAsync(updatedProfile);
