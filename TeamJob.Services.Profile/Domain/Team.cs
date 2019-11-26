@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace TeamJob.Services.Profile.Domain
 {
     public class Team
     {
-        public Guid Id { get; private set; }
+        public Guid Id                 { get; private set; }
+        public TeamMemberStatus Status { get; private set; }
 
-        public Team(Guid InId)
+        [JsonConstructor]
+        public Team(Guid id, TeamMemberStatus status)
         {
-            Id = InId;
+            Id = id;
+            Status = status;
         }
     }
 }

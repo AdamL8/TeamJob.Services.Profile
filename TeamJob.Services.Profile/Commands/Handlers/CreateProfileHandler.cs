@@ -27,7 +27,7 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
         public async Task HandleAsync(CreateProfile InCommand)
         {
-            var profile = await _profileRepository.GetAsync(x => x.Id == InCommand.ProfileId);
+            var profile = await _profileRepository.GetAsync(InCommand.ProfileId);
 
             if (profile != null)
             {

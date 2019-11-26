@@ -27,8 +27,4 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Events\External\Handlers\" />
-  </ItemGroup>
-
 </Project>

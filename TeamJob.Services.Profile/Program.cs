@@ -16,6 +16,8 @@ using Convey.WebApi;
 using TeamJob.Services.Profile.Filters;
 using FluentValidation.AspNetCore;
 using TeamJob.Services.Profile.Commands.Validations;
+using TeamJob.Services.Profile.Events.External;
+using Convey.MessageBrokers.CQRS;
 
 namespace TeamJob.Services.Profile
 {
@@ -64,7 +66,11 @@ namespace TeamJob.Services.Profile
                         .UseCors("CorsPolicy")
                         .UseRouting()
                         .UseEndpoints(r => r.MapControllers())
-                        .UseRabbitMq())
+                        .UseRabbitMq()
+                        .SubscribeEvent<AddCandidate>()
+                        .SubscribeEvent<AddMember>()
+                        .SubscribeEvent<RemoveCandidate>()
+                        .SubscribeEvent<RemoveMember>())
                     .UseLogging();
             });
     }
