@@ -61,7 +61,7 @@ namespace TeamJob.Services.Profile
                     .Build();
                 })
                     .Configure(app => app
-                        .UseInitializers()
+                        .UseConvey()
                         .UseErrorHandler()
                         .UseCors("CorsPolicy")
                         .UseRouting()
