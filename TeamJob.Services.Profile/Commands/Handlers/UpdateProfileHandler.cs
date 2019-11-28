@@ -30,7 +30,7 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
             if (profile is null)
             {
-                _logger.LogInformation($"Cannot update Profile with ID : [{InCommand.Id}] because it doesn't exist");
+                _logger.LogError($"Cannot update Profile with ID : [{InCommand.Id}] because it doesn't exist");
                 await _busPublisher.PublishAsync(new ProfileUpdatedRejected(InCommand.Id));
                 return;
             }

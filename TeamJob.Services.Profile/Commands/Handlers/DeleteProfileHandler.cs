@@ -31,7 +31,7 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
             if (profile is null)
             {
-                _logger.LogInformation($"Cannot delete Profile with ID : [{InCommand.Id}] because it doesn't exist");
+                _logger.LogError($"Cannot delete Profile with ID : [{InCommand.Id}] because it doesn't exist");
                 await _busPublisher.PublishAsync(new ProfileDeletedRejected(InCommand.Id));
                 return;
             }

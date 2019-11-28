@@ -37,7 +37,7 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
             var teamAlreadyMemberOf = profile.Teams.Find(x => x.Id == InEvent.TeamId);
             if (teamAlreadyMemberOf is null)
             {
-                _logger.LogInformation($"Profile with ID : [{InEvent.ProfileId}] is not part of the Team with ID : [{InEvent.TeamId}]");
+                _logger.LogWarning($"Profile with ID : [{InEvent.ProfileId}] is not part of the Team with ID : [{InEvent.TeamId}]");
                 return;
             }
 
