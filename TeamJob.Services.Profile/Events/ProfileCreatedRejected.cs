@@ -6,14 +6,14 @@ namespace TeamJob.Services.Profile.Events
 {
     public class ProfileCreatedRejected : IEvent
     {
-        public Guid ProfileId { get; }
-        public string Role    { get; }
+        public Guid Id     { get; }
+        public string Role { get; }
 
         [JsonConstructor]
-        public ProfileCreatedRejected(Guid profileId, string role)
+        public ProfileCreatedRejected(Guid id, string role)
         {
-            ProfileId = profileId;
-            Role      = role;
+            Id   = id;
+            Role = role;
         }
     }
 }

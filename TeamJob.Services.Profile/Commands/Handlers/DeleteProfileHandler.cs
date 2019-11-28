@@ -27,21 +27,21 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
         public async Task HandleAsync(DeleteProfile InCommand)
         {
-            var profile = await _profileRepository.GetAsync(InCommand.ProfileId);
+            var profile = await _profileRepository.GetAsync(InCommand.Id);
 
             if (profile is null)
             {
-                _logger.LogInformation($"Cannot delete Profile with ID : [{InCommand.ProfileId}] because it doesn't exist");
-                await _busPublisher.PublishAsync(new ProfileDeletedRejected(InCommand.ProfileId));
+                _logger.LogInformation($"Cannot delete Profile with ID : [{InCommand.Id}] because it doesn't exist");
+                await _busPublisher.PublishAsync(new ProfileDeletedRejected(InCommand.Id));
                 return;
             }
 
             var associatedTeams = profile.Teams.Select(x => x.Id).ToList();
 
-            await _profileRepository.DeleteAsync(InCommand.ProfileId);
+            await _profileRepository.DeleteAsync(InCommand.Id);
 
-            _logger.LogInformation($"Profile with ID [{InCommand.ProfileId}] DELETED");
-            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.ProfileId, associatedTeams));
+            _logger.LogInformation($"Profile with ID [{InCommand.Id}] DELETED");
+            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.Id, associatedTeams));
         }
     }
 }

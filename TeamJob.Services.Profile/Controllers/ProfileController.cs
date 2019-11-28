@@ -27,13 +27,13 @@ namespace TeamJob.Services.Profile.Controllers
             _queryDispatcher   = InQueryDispatcher;
         }
 
-        // GET api/profile/get/{profileId}
-        [HttpGet("get/{profileId}")]
+        // GET api/profile/get/{id}
+        [HttpGet("get/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<ProfileDto>> GetProfile([FromRoute]Guid profileId, GetProfile InQuery)
+        public async Task<ActionResult<ProfileDto>> GetProfile([FromRoute]Guid id, GetProfile InQuery)
         {
-            var profile = await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.ProfileId, profileId));
+            var profile = await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Id, id));
             if (profile is null)
             {
                 return NotFound();
@@ -45,9 +45,9 @@ namespace TeamJob.Services.Profile.Controllers
         // GET api/profile/getall
         [HttpGet("getall")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<ProfileDto>>> GetAllProfiles([FromBody] GetProfiles InQuery)
+        public async Task<ActionResult<IEnumerable<ProfileDto>>> GetAllProfiles([FromQuery]string role, GetProfiles InQuery)
         {
-            var profile = await _queryDispatcher.QueryAsync(InQuery);
+            var profile = await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Role, role));
             if (profile is null)
             {
                 return NotFound();
@@ -56,14 +56,14 @@ namespace TeamJob.Services.Profile.Controllers
             return profile.ToList();
         }
 
-        // DELETE api/profile/delete/{profileId}
-        [HttpDelete("delete/{profileId}")]
+        // DELETE api/profile/delete/{id}
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult> DeleteProfile([FromRoute]Guid profileId, DeleteProfile InCommand)
+        public async Task<ActionResult> DeleteProfile([FromRoute]Guid id, DeleteProfile InCommand)
         {
-            await _commandDispatcher.SendAsync(InCommand.Bind(x => x.ProfileId, profileId));
+            await _commandDispatcher.SendAsync(InCommand.Bind(x => x.Id, id));
 
-            return CreatedAtAction(nameof(DeleteProfile), InCommand.ProfileId, new { profileId = InCommand.ProfileId });
+            return CreatedAtAction(nameof(DeleteProfile), InCommand.Id, new { id = InCommand.Id });
         }
 
         // POST api/profile/create
@@ -73,7 +73,7 @@ namespace TeamJob.Services.Profile.Controllers
         {
             await _commandDispatcher.SendAsync(InCommand);
 
-            return CreatedAtAction(nameof(CreateProfile), InCommand.ProfileId, new { profileId = InCommand.ProfileId });
+            return CreatedAtAction(nameof(CreateProfile), InCommand.Id, new { id = InCommand.Id });
         }
 
         // POST api/profile/update
@@ -83,7 +83,7 @@ namespace TeamJob.Services.Profile.Controllers
         {
             await _commandDispatcher.SendAsync(InCommand);
 
-            return CreatedAtAction(nameof(UpdateProfile), InCommand.ProfileId, new { profileId = InCommand.ProfileId });
+            return CreatedAtAction(nameof(UpdateProfile), InCommand.Id, new { id = InCommand.Id });
         }
     }
 }

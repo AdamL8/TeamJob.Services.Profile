@@ -7,12 +7,12 @@ namespace TeamJob.Services.Profile.Queries
 {
     public class GetProfile : IQuery<ProfileDto>
     {
-        public Guid ProfileId { get; }
+        public Guid Id { get; }
 
         [JsonConstructor]
-        public GetProfile(Guid profileId)
+        public GetProfile(Guid id)
         {
-            ProfileId = profileId;
+            Id = id;
         }
     }
 }

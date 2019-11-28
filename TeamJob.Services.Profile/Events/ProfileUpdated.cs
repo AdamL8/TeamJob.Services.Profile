@@ -6,12 +6,12 @@ namespace TeamJob.Services.Profile.Events
 {
     public class ProfileUpdated : IEvent
     {
-        public Guid ProfileId { get; }
+        public Guid Id { get; }
 
         [JsonConstructor]
-        public ProfileUpdated(Guid profileId)
+        public ProfileUpdated(Guid id)
         {
-            ProfileId = profileId;
+            Id = id;
         }
     }
 }

@@ -26,16 +26,16 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
         public async Task HandleAsync(UpdateProfile InCommand)
         {
-            var profile = await _profileRepository.GetAsync(InCommand.ProfileId);
+            var profile = await _profileRepository.GetAsync(InCommand.Id);
 
             if (profile is null)
             {
-                _logger.LogInformation($"Cannot update Profile with ID : [{InCommand.ProfileId}] because it doesn't exist");
-                await _busPublisher.PublishAsync(new ProfileUpdatedRejected(InCommand.ProfileId));
+                _logger.LogInformation($"Cannot update Profile with ID : [{InCommand.Id}] because it doesn't exist");
+                await _busPublisher.PublishAsync(new ProfileUpdatedRejected(InCommand.Id));
                 return;
             }
 
-            var updatedProfile = new UserProfile(InCommand.ProfileId,
+            var updatedProfile = new UserProfile(InCommand.Id,
                                                  InCommand.PersonalInformation,
                                                  InCommand.SatisfactionProfile,
                                                  profile.Role,
@@ -44,8 +44,8 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
             await _profileRepository.UpdateAsync(updatedProfile);
 
-            _logger.LogInformation($"Profile with ID : [{InCommand.ProfileId}] UPDATED");
-            await _busPublisher.PublishAsync(new ProfileUpdated(InCommand.ProfileId));
+            _logger.LogInformation($"Profile with ID : [{InCommand.Id}] UPDATED");
+            await _busPublisher.PublishAsync(new ProfileUpdated(InCommand.Id));
         }
     }
 }

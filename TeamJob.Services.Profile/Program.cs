@@ -37,8 +37,9 @@ namespace TeamJob.Services.Profile
                     services.AddCors(options =>
                     {
                         options.AddPolicy("CorsPolicy", builder =>
-                                builder.AllowCredentials()
-                                       .WithExposedHeaders(Headers));
+                                builder.AllowAnyOrigin()
+                                       .AllowAnyMethod()
+                                       .AllowAnyHeader());
                     });
 
                     services.AddMvc(options =>

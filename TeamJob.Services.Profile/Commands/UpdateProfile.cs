@@ -8,18 +8,18 @@ namespace TeamJob.Services.Profile.Commands
 {
     public class UpdateProfile : ICommand
     {
-        public Guid ProfileId                          { get; }
+        public Guid Id                                 { get; }
         public PersonalInformation PersonalInformation { get; }
         public SatisfactionProfile SatisfactionProfile { get; }
         public List<Team> Teams                        { get; }
 
         [JsonConstructor]
-        public UpdateProfile(Guid                profileId,
+        public UpdateProfile(Guid                id,
                              PersonalInformation personalInformation,
                              SatisfactionProfile satisfactionProfile,
                              List<Team>          teams)
         {
-            ProfileId           = profileId;
+            Id                  = id;
             PersonalInformation = personalInformation;
             SatisfactionProfile = satisfactionProfile;
             Teams               = teams;

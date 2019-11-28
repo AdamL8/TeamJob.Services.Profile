@@ -8,6 +8,7 @@ using MongoDB.Driver.Linq;
 using System.Threading.Tasks;
 using TeamJob.Services.Profile.Domain;
 using TeamJob.Services.Profile.DTO;
+using TeamJob.Services.Profile.Exceptions;
 
 namespace TeamJob.Services.Profile.Queries.Handlers
 {
@@ -26,7 +27,15 @@ namespace TeamJob.Services.Profile.Queries.Handlers
 
             if (string.IsNullOrEmpty(InQuery.Role) == false)
             {
-                documents = documents.Where(p => p.Role == Enum.Parse<Role>(InQuery.Role));
+                if (Enum.TryParse(InQuery.Role, out Role result))
+                {
+                    documents = documents.Where(p => p.Role == result);
+                }
+                else
+                {
+                    throw new TeamJobException("Codes.InvalidRole",
+                    $"The supplied filter Role [{InQuery.Role}] is invalid");
+                }
             }
 
             var profiles = await documents.ToListAsync();

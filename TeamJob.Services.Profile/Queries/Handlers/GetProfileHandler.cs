@@ -18,7 +18,7 @@ namespace TeamJob.Services.Profile.Queries.Handlers
 
         public async Task<ProfileDto> HandleAsync(GetProfile InQuery)
         {
-            var profile = await _profileRepository.GetAsync(InQuery.ProfileId);
+            var profile = await _profileRepository.GetAsync(InQuery.Id);
 
             return profile?.AsDto();
         }
