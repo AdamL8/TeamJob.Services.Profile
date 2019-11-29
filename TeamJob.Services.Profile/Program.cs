@@ -69,7 +69,7 @@ namespace TeamJob.Services.Profile
                         .UseEndpoints(r => r.MapControllers())
                         .UseRabbitMq()
                         .SubscribeEvent<AddCandidate>()
-                        .SubscribeEvent<AddMember>()
+                        .SubscribeEvent<AcceptCandidate>()
                         .SubscribeEvent<RemoveCandidate>()
                         .SubscribeEvent<RemoveMember>())
                     .UseLogging();

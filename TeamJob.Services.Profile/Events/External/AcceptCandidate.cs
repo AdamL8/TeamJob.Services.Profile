@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace TeamJob.Services.Profile.Events.External
 {
     [Message(exchange: "team", external: true)]
-    public class AddMember : IEvent
+    public class AcceptCandidate : IEvent
     {
         public Guid ProfileId { get; }
         public Guid TeamId    { get; }
 
         [JsonConstructor]
-        public AddMember(Guid profileId, Guid teamId)
+        public AcceptCandidate(Guid profileId, Guid teamId)
         {
             ProfileId = profileId;
             TeamId    = teamId;
