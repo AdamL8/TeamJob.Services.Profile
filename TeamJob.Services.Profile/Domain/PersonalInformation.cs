@@ -9,14 +9,14 @@ namespace TeamJob.Services.Profile.Domain
         public string LastName                       { get; private set; }
         public ContactInformation ContactInformation { get; private set; }
         public Address Address                       { get; private set; }
-        public DateTime DateOfBirth                  { get; private set; }
+        public long DateOfBirth                      { get; private set; }
 
         [JsonConstructor]
         public PersonalInformation(string             firstName,
                                    string             lastName,
                                    ContactInformation contactInformation,
                                    Address            address,
-                                   DateTime           dateOfBirth)
+                                   long               dateOfBirth)
         {
             FirstName          = firstName;
             LastName           = lastName;

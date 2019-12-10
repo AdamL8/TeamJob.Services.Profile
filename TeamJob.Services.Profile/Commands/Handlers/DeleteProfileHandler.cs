@@ -41,7 +41,7 @@ namespace TeamJob.Services.Profile.Commands.Handlers
             await _profileRepository.DeleteAsync(InCommand.Id);
 
             _logger.LogInformation($"Profile with ID [{InCommand.Id}] DELETED");
-            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.Id, associatedTeams));
+            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.Id, associatedTeams, profile.Role.ToString()));
         }
     }
 }

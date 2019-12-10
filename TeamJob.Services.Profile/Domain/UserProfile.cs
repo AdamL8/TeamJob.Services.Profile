@@ -12,8 +12,8 @@ namespace TeamJob.Services.Profile.Domain
         public SatisfactionProfile SatisfactionProfile { get; private set; }
         public Role Role                               { get; private set; }
         public List<Team> Teams                        { get; private set; }
-        public DateTime CreatedAt                      { get; private set; }
-        public DateTime UpdatedAt                      { get; private set; }
+        public long CreatedAt                          { get; private set; }
+        public long UpdatedAt                          { get; private set; }
 
 
 
@@ -22,7 +22,7 @@ namespace TeamJob.Services.Profile.Domain
                            PersonalInformation personalInformation,
                            SatisfactionProfile satisfactionProfile,
                            Role                role)
-            : this(id, personalInformation, satisfactionProfile, role, new List<Team>(), DateTime.UtcNow)
+            : this(id, personalInformation, satisfactionProfile, role, new List<Team>(), DateTimeOffset.UtcNow.ToUnixTimeSeconds())
         {            
         }
 
@@ -31,7 +31,7 @@ namespace TeamJob.Services.Profile.Domain
                            SatisfactionProfile satisfactionProfile,
                            Role                role,
                            List<Team>          teams,
-                           DateTime            createdAt)
+                           long                createdAt)
         {
             Id                  = id;
             PersonalInformation = personalInformation;
@@ -39,7 +39,7 @@ namespace TeamJob.Services.Profile.Domain
             Role                = role;
             Teams               = teams;
             CreatedAt           = createdAt;
-            UpdatedAt           = DateTime.UtcNow;
+            UpdatedAt           = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         }
     }
 }

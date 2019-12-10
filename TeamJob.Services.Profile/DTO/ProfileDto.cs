@@ -11,7 +11,7 @@ namespace TeamJob.Services.Profile.DTO
         public SatisfactionProfile SatisfactionProfile { get; set; }
         public Role Role                               { get; set; }
         public List<Team> Teams                        { get; set; }
-        public DateTime CreatedAt                      { get; set; }
-        public DateTime UpdatedAt                      { get; set; }
+        public long CreatedAt                          { get; set; }
+        public long UpdatedAt                          { get; set; }
     }
 }

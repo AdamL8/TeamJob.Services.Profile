@@ -45,7 +45,7 @@ namespace TeamJob.Services.Profile.Commands.Handlers
             await _profileRepository.UpdateAsync(updatedProfile);
 
             _logger.LogInformation($"Profile with ID : [{InCommand.Id}] UPDATED");
-            await _busPublisher.PublishAsync(new ProfileUpdated(InCommand.Id));
+            await _busPublisher.PublishAsync(new ProfileUpdated(InCommand.Id, profile.Role.ToString()));
         }
     }
 }

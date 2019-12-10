@@ -9,12 +9,15 @@ namespace TeamJob.Services.Profile.Events
     {
         public Guid Id            { get; }
         public List<Guid> TeamIds { get; }
+        public string Role        { get; }
+
 
         [JsonConstructor]
-        public ProfileDeleted(Guid id, List<Guid> teamIds)
+        public ProfileDeleted(Guid id, List<Guid> teamIds, string role)
         {
             Id      = id;
             TeamIds = teamIds;
+            Role    = role;
         }
     }
 }
