@@ -1,0 +1,19 @@
+2020-01-23 21:05:33.486 -05:00 [INF] User profile is available. Using 'C:\Users\Adam\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-01-23 21:05:33.927 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.add_candidate' with routing key: 'add_candidate' for exchange: 'team'.
+2020-01-23 21:05:33.967 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.accept_candidate' with routing key: 'accept_candidate' for exchange: 'team'.
+2020-01-23 21:05:33.970 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.remove_candidate' with routing key: 'remove_candidate' for exchange: 'team'.
+2020-01-23 21:05:33.981 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.remove_member' with routing key: 'remove_member' for exchange: 'team'.
+2020-01-23 21:05:34.124 -05:00 [INF] Now listening on: https://localhost:5003
+2020-01-23 21:05:34.125 -05:00 [INF] Now listening on: http://localhost:5002
+2020-01-23 21:05:34.127 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-01-23 21:05:34.128 -05:00 [INF] Hosting environment: Development
+2020-01-23 21:05:34.129 -05:00 [INF] Content root path: C:\Users\Adam\Repositories\TeamJob.Services.Profile\TeamJob.Services.Profile
+2020-01-23 21:05:35.430 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5003/  
+2020-01-23 21:05:35.459 -05:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.HomeController.Get (TeamJob.Services.Profile)'
+2020-01-23 21:05:35.494 -05:00 [INF] Route matched with {action = "Get", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller TeamJob.Services.Profile.Controllers.HomeController (TeamJob.Services.Profile).
+2020-01-23 21:05:35.502 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-23 21:05:35.514 -05:00 [INF] Executed action TeamJob.Services.Profile.Controllers.HomeController.Get (TeamJob.Services.Profile) in 12.705ms
+2020-01-23 21:05:35.518 -05:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.HomeController.Get (TeamJob.Services.Profile)'
+2020-01-23 21:05:35.524 -05:00 [INF] Request finished in 97.7843ms 200 application/json
+2020-01-23 21:05:35.979 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5003/favicon.ico  
+2020-01-23 21:05:35.982 -05:00 [INF] Request finished in 2.5624000000000002ms 404 

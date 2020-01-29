@@ -1,0 +1,17 @@
+2019-12-01 18:22:13.190 -05:00 [INF] User profile is available. Using 'C:\Users\Adam\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-12-01 18:22:13.929 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.add_candidate' with routing key: 'add_candidate' for exchange: 'team'.
+2019-12-01 18:22:13.980 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.accept_candidate' with routing key: 'accept_candidate' for exchange: 'team'.
+2019-12-01 18:22:14.034 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.remove_candidate' with routing key: 'remove_candidate' for exchange: 'team'.
+2019-12-01 18:22:14.043 -05:00 [INF] Declaring a queue: 'team_job.services.profile/team.remove_member' with routing key: 'remove_member' for exchange: 'team'.
+2019-12-01 18:22:14.226 -05:00 [INF] Now listening on: https://localhost:5003
+2019-12-01 18:22:14.227 -05:00 [INF] Now listening on: http://localhost:5002
+2019-12-01 18:22:14.229 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-12-01 18:22:14.230 -05:00 [INF] Hosting environment: Development
+2019-12-01 18:22:14.231 -05:00 [INF] Content root path: C:\Users\Adam\Repositories\TeamJob.Services.Profile\TeamJob.Services.Profile
+2019-12-01 18:22:16.085 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5003/  
+2019-12-01 18:22:16.123 -05:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.HomeController.Get (TeamJob.Services.Profile)'
+2019-12-01 18:22:16.174 -05:00 [INF] Route matched with {action = "Get", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller TeamJob.Services.Profile.Controllers.HomeController (TeamJob.Services.Profile).
+2019-12-01 18:22:16.186 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2019-12-01 18:22:16.196 -05:00 [INF] Executed action TeamJob.Services.Profile.Controllers.HomeController.Get (TeamJob.Services.Profile) in 12.1659ms
+2019-12-01 18:22:16.199 -05:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.HomeController.Get (TeamJob.Services.Profile)'
+2019-12-01 18:22:16.203 -05:00 [INF] Request finished in 122.81030000000001ms 200 application/json

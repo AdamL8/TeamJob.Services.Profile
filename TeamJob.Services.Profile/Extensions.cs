@@ -10,7 +10,7 @@ namespace TeamJob.Services.Profile
             {
                 Id                  = InProfile.Id,
                 PersonalInformation = InProfile.PersonalInformation,
-                Role                = InProfile.Role,
+                Role                = InProfile.Role.ToString(),
                 CreatedAt           = InProfile.CreatedAt,
                 SatisfactionProfile = InProfile.SatisfactionProfile,
                 Teams               = InProfile.Teams,

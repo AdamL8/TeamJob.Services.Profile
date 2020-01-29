@@ -30,30 +30,19 @@ namespace TeamJob.Services.Profile.Controllers
         // GET api/profile/get/{id}
         [HttpGet("get/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<ProfileDto>> GetProfile([FromRoute]Guid id, GetProfile InQuery)
         {
-            var profile = await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Id, id));
-            if (profile is null)
-            {
-                return NotFound();
-            }
-
-            return profile;
+            return Ok(await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Id, id)));
         }
 
         // GET api/profile/getall
         [HttpGet("getall")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<IEnumerable<ProfileDto>>> GetAllProfiles([FromQuery]string role, GetProfiles InQuery)
         {
-            var profile = await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Role, role));
-            if (profile is null)
-            {
-                return NotFound();
-            }
-
-            return profile.ToList();
+            return Ok((await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Role, role))).ToList());
         }
 
         // DELETE api/profile/delete/{id}
@@ -76,7 +65,7 @@ namespace TeamJob.Services.Profile.Controllers
             return CreatedAtAction(nameof(CreateProfile), InCommand.Id, new { id = InCommand.Id });
         }
 
-        // POST api/profile/update
+        // PUT api/profile/update
         [HttpPut("update")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult> UpdateProfile([FromBody]UpdateProfile InCommand)
