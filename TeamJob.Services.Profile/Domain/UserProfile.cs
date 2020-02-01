@@ -11,7 +11,7 @@ namespace TeamJob.Services.Profile.Domain
         public PersonalInformation PersonalInformation { get; private set; }
         public SatisfactionProfile SatisfactionProfile { get; private set; }
         public Role Role                               { get; private set; }
-        public List<Team> Teams                        { get; private set; }
+        public List<Team> Teams                        { get; private set; } // TODO: Change to ISet
         public long CreatedAt                          { get; private set; }
         public long UpdatedAt                          { get; private set; }
 
@@ -40,6 +40,11 @@ namespace TeamJob.Services.Profile.Domain
             Teams               = teams;
             CreatedAt           = createdAt;
             UpdatedAt           = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        }
+
+        public bool RemoveTeam(Guid InTeamId)
+        {
+            return Teams.RemoveAll(x => x.Id == InTeamId) > 0;
         }
     }
 }

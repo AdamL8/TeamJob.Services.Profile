@@ -71,6 +71,8 @@ namespace TeamJob.Services.Profile
                         .SubscribeEvent<AddCandidate>()
                         .SubscribeEvent<AcceptCandidate>()
                         .SubscribeEvent<RemoveCandidate>()
+                        .SubscribeEvent<TeamCreated>()
+                        .SubscribeEvent<TeamDeleted>()
                         .SubscribeEvent<RemoveMember>())
                     .UseLogging();
             });
