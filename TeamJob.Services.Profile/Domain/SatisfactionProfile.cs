@@ -10,6 +10,8 @@ namespace TeamJob.Services.Profile.Domain
         public int AvgHours                { get; private set; }
         public HourStructure HourStructure { get; private set; }
         public List<WorkShift> WorkShifts  { get; private set; }
+        public List<string> Skills         { get; private set; }
+        public List<string> Limits         { get; private set; }
         public bool IsAspiringLeader       { get; private set; }
         public bool IsAspiringTrainer      { get; private set; }
 
@@ -18,7 +20,9 @@ namespace TeamJob.Services.Profile.Domain
                                    int             maxHours,
                                    int             avgHours,
                                    HourStructure   hourStructure,
-                                   List<WorkShift> workShifts, 
+                                   List<WorkShift> workShifts,
+                                   List<string>    skills,
+                                   List<string>    limits,
                                    bool            isAspiringLeader,
                                    bool            isAspiringTrainer)
         {
@@ -27,6 +31,8 @@ namespace TeamJob.Services.Profile.Domain
             AvgHours          = avgHours;
             HourStructure     = hourStructure;
             WorkShifts        = workShifts;
+            Skills            = skills;
+            Limits            = limits;
             IsAspiringLeader  = isAspiringLeader;
             IsAspiringTrainer = isAspiringTrainer;
 
