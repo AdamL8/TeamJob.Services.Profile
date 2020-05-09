@@ -28,14 +28,14 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
             var profile = await _profileRepository.GetAsync(InEvent.ProfileId);
             if (profile is null)
             {
-                _logger.LogInformation($"Profile with ID : [{InEvent.ProfileId}] does not exist");
+                _logger.LogError($"Profile with ID : [{InEvent.ProfileId}] does not exist");
                 return;
             }
 
             var teamAlreadyMemberOf = profile.Teams.Find(x => x.Id == InEvent.TeamId);
             if (teamAlreadyMemberOf != null)
             {
-                _logger.LogInformation($"Profile with ID : [{InEvent.ProfileId}] is already part of the Team with ID : [{InEvent.TeamId}] with Status : [{teamAlreadyMemberOf.Status}]");
+                _logger.LogError($"Profile with ID : [{InEvent.ProfileId}] is already part of the Team with ID : [{InEvent.TeamId}] with Status : [{teamAlreadyMemberOf.Status}]");
                 return;
             }
 

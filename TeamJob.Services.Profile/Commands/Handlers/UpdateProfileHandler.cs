@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using TeamJob.Services.Profile.Domain;
 using TeamJob.Services.Profile.Events;
+using TeamJob.Services.Profile.Exceptions;
 
 namespace TeamJob.Services.Profile.Commands.Handlers
 {
@@ -26,16 +27,19 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
         public async Task HandleAsync(UpdateProfile InCommand)
         {
-            var profile = await _profileRepository.GetAsync(InCommand.Id);
+            var profileId = InCommand.Id;
 
+            var profile = await _profileRepository.GetAsync(profileId);
             if (profile is null)
             {
-                _logger.LogError($"Cannot update Profile with ID : [{InCommand.Id}] because it doesn't exist");
-                await _busPublisher.PublishAsync(new ProfileUpdatedRejected(InCommand.Id));
-                return;
+                _logger.LogError($"Cannot update Profile with ID : [{profileId}] because it doesn't exist");
+                await _busPublisher.PublishAsync(new ProfileUpdatedRejected(profileId));
+                
+                
+                throw new ProfileNotFoundException(profileId);
             }
 
-            var updatedProfile = new UserProfile(InCommand.Id,
+            var updatedProfile = new UserProfile(profileId,
                                                  InCommand.PersonalInformation,
                                                  InCommand.SatisfactionProfile,
                                                  profile.Role,
@@ -44,8 +48,8 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
             await _profileRepository.UpdateAsync(updatedProfile);
 
-            _logger.LogInformation($"Profile with ID : [{InCommand.Id}] UPDATED");
-            await _busPublisher.PublishAsync(new ProfileUpdated(InCommand.Id, profile.Role.ToString()));
+            _logger.LogInformation($"Profile with ID : [{profileId}] was UPDATED");
+            await _busPublisher.PublishAsync(new ProfileUpdated(profileId, profile.Role.ToString()));
         }
     }
 }

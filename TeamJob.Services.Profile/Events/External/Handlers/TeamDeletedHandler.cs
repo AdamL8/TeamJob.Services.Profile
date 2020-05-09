@@ -28,7 +28,7 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
 
         public async Task HandleAsync(TeamDeleted InEvent)
         {
-            var profiles = _profileRepository.Collection.AsQueryable();
+            var profiles = _profileRepository.Collection?.AsQueryable();
             var teamId   = InEvent.Id;
 
             await profiles.ForEachAsync((profile) =>

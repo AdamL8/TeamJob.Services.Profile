@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TeamJob.Services.Profile.Domain;
 using TeamJob.Services.Profile.Events;
+using TeamJob.Services.Profile.Exceptions;
 
 namespace TeamJob.Services.Profile.Commands.Handlers
 {
@@ -27,21 +28,23 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
         public async Task HandleAsync(DeleteProfile InCommand)
         {
-            var profile = await _profileRepository.GetAsync(InCommand.Id);
+            var profileId = InCommand.Id;
 
+            var profile = await _profileRepository.GetAsync(profileId);
             if (profile is null)
             {
-                _logger.LogError($"Cannot delete Profile with ID : [{InCommand.Id}] because it doesn't exist");
-                await _busPublisher.PublishAsync(new ProfileDeletedRejected(InCommand.Id));
-                return;
+                _logger.LogError($"Cannot delete Profile with ID : [{profileId}] because it doesn't exist");
+                await _busPublisher.PublishAsync(new ProfileDeletedRejected(profileId));
+                
+                throw new ProfileNotFoundException(profileId);
             }
 
             var associatedTeams = profile.Teams.Select(x => x.Id).ToList();
 
-            await _profileRepository.DeleteAsync(InCommand.Id);
+            await _profileRepository.DeleteAsync(profileId);
 
-            _logger.LogInformation($"Profile with ID [{InCommand.Id}] DELETED");
-            await _busPublisher.PublishAsync(new ProfileDeleted(InCommand.Id, associatedTeams, profile.Role.ToString()));
+            _logger.LogInformation($"Profile with ID [{profileId}] was DELETED");
+            await _busPublisher.PublishAsync(new ProfileDeleted(profileId, associatedTeams, profile.Role.ToString()));
         }
     }
 }
