@@ -2,16 +2,14 @@
 
 namespace TeamJob.Services.Profile.Commands.Validations
 {
-    public class UpdateProfileValidator : AbstractValidator<UpdateProfile>
+    public class DeleteProfileValidator : AbstractValidator<DeleteProfile>
     {
-        public UpdateProfileValidator()
+        public DeleteProfileValidator()
         {
             RuleFor(x => x.Id)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull().WithMessage("Profile ID cannot be empty")
                 .NotEmpty().WithMessage("Profile ID cannot be empty");
-
-            // TODO: Finish this
         }
     }
 }

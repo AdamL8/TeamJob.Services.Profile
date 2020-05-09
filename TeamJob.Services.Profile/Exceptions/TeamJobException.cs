@@ -7,7 +7,7 @@ namespace TeamJob.Services.Profile.Exceptions
 {
     public class TeamJobException : Exception
     {
-        public string Code { get; }
+        public virtual string Code { get; }
 
         public TeamJobException()
         {

@@ -27,26 +27,26 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 
         public async Task HandleAsync(CreateProfile InCommand)
         {
-            var profile = await _profileRepository.GetAsync(InCommand.Id);
+            var profileId = InCommand.Id;
 
+            var profile = await _profileRepository.GetAsync(profileId);
             if (profile != null)
             {
-                _logger.LogInformation($"Cannot create new profile because one with ID : [{InCommand.Id}] already exists");
-                await _busPublisher.PublishAsync(new ProfileCreatedRejected(InCommand.Id, InCommand.Role.ToString()));
+                _logger.LogError($"Cannot create new profile because a with ID : [{profileId}] already exists");
+                await _busPublisher.PublishAsync(new ProfileCreatedRejected(profileId, InCommand.Role.ToString()));
 
-                throw new TeamJobException("Codes.ProfileAlreadyExists",
-                    $"A profile with Id: '{InCommand.Id}' already exist.");
+                throw new ProfileAlreadyExistsException(profileId);
             }
 
             var profileRole = Enum.Parse<Role>(InCommand.Role);
 
-            await _profileRepository.AddAsync(new UserProfile(InCommand.Id,
+            await _profileRepository.AddAsync(new UserProfile(profileId,
                                                               InCommand.PersonalInformation,
                                                               InCommand.SatisfactionProfile,
                                                               profileRole));
 
-            _logger.LogInformation($"New profile with ID [{InCommand.Id}] and Role [{InCommand.Role}] CREATED");
-            await _busPublisher.PublishAsync(new ProfileCreated(InCommand.Id, InCommand.Role.ToString()));
+            _logger.LogInformation($"New profile with ID [{profileId}] and Role [{InCommand.Role}] was CREATED");
+            await _busPublisher.PublishAsync(new ProfileCreated(profileId, InCommand.Role.ToString()));
         }
     }
 }

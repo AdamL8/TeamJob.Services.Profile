@@ -27,15 +27,8 @@ namespace TeamJob.Services.Profile.Queries.Handlers
 
             if (string.IsNullOrEmpty(InQuery.Role) == false)
             {
-                if (Enum.TryParse(InQuery.Role, out Role result))
-                {
-                    documents = documents.Where(p => p.Role == result);
-                }
-                else
-                {
-                    throw new TeamJobException("Codes.InvalidRole",
-                    $"The supplied filter Role [{InQuery.Role}] is invalid");
-                }
+                var profileRole = Enum.Parse<Role>(InQuery.Role);
+                documents       = documents.Where(p => p.Role == profileRole);
             }
 
             var profiles = await documents.ToListAsync();

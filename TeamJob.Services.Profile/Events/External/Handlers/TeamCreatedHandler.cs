@@ -30,7 +30,7 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
             var profile = await _profileRepository.GetAsync(InEvent.OwnerId);
             if (profile is null)
             {
-                _logger.LogInformation($"Profile with ID : [{InEvent.OwnerId}] does not exist");
+                _logger.LogError($"Profile with ID : [{InEvent.OwnerId}] does not exist");
                 return;
             }
 
@@ -39,7 +39,7 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
             var teamAlreadyPartOf = profile.Teams.SingleOrDefault(x => x.Id == teamId);
             if (teamAlreadyPartOf != null)
             {
-                _logger.LogInformation($"Profile with ID : [{InEvent.OwnerId}] is already the part of the Team with ID : [{teamId}] with Status : [{teamAlreadyPartOf.Status}]");
+                _logger.LogError($"Profile with ID : [{InEvent.OwnerId}] is already the part of the Team with ID : [{teamId}] with Status : [{teamAlreadyPartOf.Status}]");
                 return;
             }
 
