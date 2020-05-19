@@ -17,7 +17,7 @@ namespace TeamJob.Services.Profile.Queries.Validations
 
         private bool IsValidRole(string InRole)
         {
-            return string.IsNullOrEmpty()
+            return string.IsNullOrEmpty(InRole)
                         ? true
                         : Enum.IsDefined(typeof(Role), InRole);
         }
