@@ -48,18 +48,46 @@ namespace TeamJob.Services.Profile
                         options.Filters.Add(typeof(ValidatorActionFilter));
                     }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateProfileValidator>());
 
-                    services.AddConvey()
-                    .AddWebApi()
-                    .AddMongo()
-                    .AddMongoRepository<UserProfile, Guid>("Profiles")
-                    .AddEventHandlers()
-                    .AddCommandHandlers()
-                    .AddQueryHandlers()
-                    .AddInMemoryCommandDispatcher()
-                    .AddInMemoryEventDispatcher()
-                    .AddInMemoryQueryDispatcher()
-                    .AddRabbitMq()
-                    .Build();
+                    // First check if env vars exist
+                    string mongoConnectionString = Environment.GetEnvironmentVariable("PROFILE_DATABASE_CONNECTION_STRING");
+
+                    if (mongoConnectionString != null)
+                    {
+                        // Set the mongo parameters
+                        MongoDbOptions mongoOptions = new MongoDbOptions
+                        {
+                            ConnectionString = mongoConnectionString,
+                            Database = "profile-service",
+                            Seed = false
+                        };
+                        services.AddConvey()
+                        .AddWebApi()
+                        .AddMongo(mongoOptions)
+                        .AddMongoRepository<UserProfile, Guid>("Profiles")
+                        .AddEventHandlers()
+                        .AddCommandHandlers()
+                        .AddQueryHandlers()
+                        .AddInMemoryCommandDispatcher()
+                        .AddInMemoryEventDispatcher()
+                        .AddInMemoryQueryDispatcher()
+                        .AddRabbitMq()
+                        .Build();
+                    } else {
+                        services.AddConvey()
+                        .AddWebApi()
+                        .AddMongo()
+                        .AddMongoRepository<UserProfile, Guid>("Profiles")
+                        .AddEventHandlers()
+                        .AddCommandHandlers()
+                        .AddQueryHandlers()
+                        .AddInMemoryCommandDispatcher()
+                        .AddInMemoryEventDispatcher()
+                        .AddInMemoryQueryDispatcher()
+                        .AddRabbitMq()
+                        .Build();
+                    }
+
+                    
                 })
                     .Configure(app => app
                         .UseConvey()
