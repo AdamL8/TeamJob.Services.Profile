@@ -57,7 +57,7 @@ namespace TeamJob.Services.Profile
                         MongoDbOptions mongoOptions = new MongoDbOptions
                         {
                             ConnectionString = mongoConnectionString,
-                            Database = "schedule-service",
+                            Database = "profile-service",
                             Seed = false
                         };
                         services.AddConvey()
