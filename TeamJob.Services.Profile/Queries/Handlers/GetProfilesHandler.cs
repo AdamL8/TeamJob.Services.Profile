@@ -8,7 +8,6 @@ using MongoDB.Driver.Linq;
 using System.Threading.Tasks;
 using TeamJob.Services.Profile.Domain;
 using TeamJob.Services.Profile.DTO;
-using TeamJob.Services.Profile.Exceptions;
 
 namespace TeamJob.Services.Profile.Queries.Handlers
 {

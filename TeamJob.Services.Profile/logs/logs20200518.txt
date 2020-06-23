@@ -1,0 +1,144 @@
+2020-05-18 09:21:51.699 -04:00 [INF] Received a message with id: '973a4ed7-698e-4a90-bf34-9e870c3587a9', correlation id: '05ad19db-4bee-457f-a375-41639f8cf44e', timestamp: 0 [queue: 'team_job.services.profile/team.team_created', routing key: 'team_created', exchange: 'team'].
+2020-05-18 09:21:51.773 -04:00 [INF] Handling a message: 'TeamCreated' [id: '973a4ed7-698e-4a90-bf34-9e870c3587a9'] with correlation id: '05ad19db-4bee-457f-a375-41639f8cf44e'. 
+2020-05-18 09:21:52.159 -04:00 [INF] Profile with ID [64f6d010-06a6-4d03-9fd8-bed9af04304f] was ADDED to the Team with ID : [88cc1420-990a-11ea-8f88-09e3db092a41] as an [Owner]
+2020-05-18 09:21:52.163 -04:00 [INF] Handled a message: 'TeamCreated' [id: '973a4ed7-698e-4a90-bf34-9e870c3587a9'] with correlation id: '05ad19db-4bee-457f-a375-41639f8cf44e'. 
+2020-05-18 09:22:49.721 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/64f6d010-06a6-4d03-9fd8-bed9af04304f  
+2020-05-18 09:22:49.725 -04:00 [INF] CORS policy execution successful.
+2020-05-18 09:22:49.729 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 09:22:49.734 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 09:22:49.789 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 09:22:49.796 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 55.4198ms
+2020-05-18 09:22:49.800 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 09:22:49.804 -04:00 [INF] Request finished in 82.9522ms 200 application/json
+2020-05-18 09:27:11.543 -04:00 [INF] Received a message with id: '36dbedc6-76ef-4d16-8080-9cfad32482c0', correlation id: '112852e4-32ed-4f8a-89aa-262ff39c0a11', timestamp: 0 [queue: 'team_job.services.profile/team.team_created', routing key: 'team_created', exchange: 'team'].
+2020-05-18 09:27:11.549 -04:00 [INF] Handling a message: 'TeamCreated' [id: '36dbedc6-76ef-4d16-8080-9cfad32482c0'] with correlation id: '112852e4-32ed-4f8a-89aa-262ff39c0a11'. 
+2020-05-18 09:27:11.642 -04:00 [INF] Profile with ID [64f6d010-06a6-4d03-9fd8-bed9af04304f] was ADDED to the Team with ID : [4785ea30-990b-11ea-8f88-09e3db092a41] as an [Owner]
+2020-05-18 09:27:11.644 -04:00 [INF] Handled a message: 'TeamCreated' [id: '36dbedc6-76ef-4d16-8080-9cfad32482c0'] with correlation id: '112852e4-32ed-4f8a-89aa-262ff39c0a11'. 
+2020-05-18 09:27:21.598 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/64f6d010-06a6-4d03-9fd8-bed9af04304f  
+2020-05-18 09:27:21.600 -04:00 [INF] CORS policy execution successful.
+2020-05-18 09:27:21.601 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 09:27:21.603 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 09:27:21.642 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 09:27:21.652 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 46.6807ms
+2020-05-18 09:27:21.655 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 09:27:21.657 -04:00 [INF] Request finished in 59.019600000000004ms 200 application/json
+2020-05-18 09:30:02.016 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 09:30:02.018 -04:00 [INF] CORS policy execution successful.
+2020-05-18 09:30:02.020 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 09:30:02.024 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 09:30:02.070 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 09:30:02.073 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 41.1383ms
+2020-05-18 09:30:02.076 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 09:30:02.078 -04:00 [INF] Request finished in 62.306700000000006ms 200 application/json
+2020-05-18 09:31:25.604 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/getall  
+2020-05-18 09:31:25.606 -04:00 [INF] CORS policy execution successful.
+2020-05-18 09:31:25.608 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 09:31:25.610 -04:00 [INF] Route matched with {action = "GetAllProfiles", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TeamJob.Services.Profile.DTO.ProfileDto]]] GetAllProfiles(System.String, TeamJob.Services.Profile.Queries.GetProfiles) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 09:31:25.620 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-05-18 09:31:25.623 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile) in 7.3792ms
+2020-05-18 09:31:25.626 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 09:31:25.628 -04:00 [INF] Request finished in 23.7895ms 400 application/json
+2020-05-18 09:59:59.346 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/getall  
+2020-05-18 09:59:59.350 -04:00 [INF] CORS policy execution successful.
+2020-05-18 09:59:59.354 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 09:59:59.357 -04:00 [INF] Route matched with {action = "GetAllProfiles", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TeamJob.Services.Profile.DTO.ProfileDto]]] GetAllProfiles(System.String, TeamJob.Services.Profile.Queries.GetProfiles) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 09:59:59.364 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-05-18 09:59:59.367 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile) in 6.5652ms
+2020-05-18 09:59:59.370 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 09:59:59.372 -04:00 [INF] Request finished in 26.098000000000003ms 400 application/json
+2020-05-18 10:48:17.334 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 10:48:17.346 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:48:17.353 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:48:17.357 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:48:19.667 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 10:48:19.672 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 2311.6907ms
+2020-05-18 10:48:19.675 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:48:19.682 -04:00 [INF] Request finished in 2348.0827ms 200 application/json
+2020-05-18 10:48:19.683 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 10:48:19.684 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:48:19.685 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:48:19.687 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:48:19.725 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 10:48:19.729 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 38.5463ms
+2020-05-18 10:48:19.731 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:48:19.734 -04:00 [INF] Request finished in 51.1584ms 200 application/json
+2020-05-18 10:48:24.557 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 10:48:24.558 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:48:24.559 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:48:24.561 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:48:24.599 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 10:48:24.602 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 37.7093ms
+2020-05-18 10:48:24.604 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:48:24.606 -04:00 [INF] Request finished in 49.3162ms 200 application/json
+2020-05-18 10:49:42.139 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/getall  
+2020-05-18 10:49:42.141 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:49:42.142 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 10:49:42.146 -04:00 [INF] Route matched with {action = "GetAllProfiles", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TeamJob.Services.Profile.DTO.ProfileDto]]] GetAllProfiles(System.String, TeamJob.Services.Profile.Queries.GetProfiles) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:49:42.154 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-05-18 10:49:42.157 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile) in 7.8664000000000005ms
+2020-05-18 10:49:42.158 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 10:49:42.161 -04:00 [INF] Request finished in 21.032ms 400 application/json
+2020-05-18 10:50:04.771 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 10:50:04.773 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:50:04.774 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:50:04.775 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:50:04.818 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 10:50:04.827 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 48.1328ms
+2020-05-18 10:50:04.834 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:50:04.838 -04:00 [INF] Request finished in 66.87780000000001ms 200 application/json
+2020-05-18 10:50:48.718 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/getall  
+2020-05-18 10:50:48.719 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:50:48.721 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 10:50:48.723 -04:00 [INF] Route matched with {action = "GetAllProfiles", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TeamJob.Services.Profile.DTO.ProfileDto]]] GetAllProfiles(System.String, TeamJob.Services.Profile.Queries.GetProfiles) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:50:48.728 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-05-18 10:50:48.731 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile) in 3.725ms
+2020-05-18 10:50:48.737 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 10:50:48.738 -04:00 [INF] Request finished in 20.2967ms 400 application/json
+2020-05-18 10:54:09.779 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 10:54:09.782 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:54:09.783 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:54:09.786 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:54:09.836 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 10:54:09.838 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 37.2397ms
+2020-05-18 10:54:09.840 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 10:54:09.842 -04:00 [INF] Request finished in 62.6736ms 200 application/json
+2020-05-18 10:55:00.517 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/getall  
+2020-05-18 10:55:00.519 -04:00 [INF] CORS policy execution successful.
+2020-05-18 10:55:00.521 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 10:55:00.523 -04:00 [INF] Route matched with {action = "GetAllProfiles", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TeamJob.Services.Profile.DTO.ProfileDto]]] GetAllProfiles(System.String, TeamJob.Services.Profile.Queries.GetProfiles) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 10:55:00.527 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-05-18 10:55:00.529 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile) in 3.1096000000000004ms
+2020-05-18 10:55:00.530 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetAllProfiles (TeamJob.Services.Profile)'
+2020-05-18 10:55:00.533 -04:00 [INF] Request finished in 15.5252ms 400 application/json
+2020-05-18 10:55:26.577 -04:00 [INF] Received a message with id: '596c9263-6141-4aab-aa87-7489d17f2160', correlation id: '4b02345e-8270-4e51-ae30-820ff9ef1ae7', timestamp: 0 [queue: 'team_job.services.profile/team.add_candidate', routing key: 'add_candidate', exchange: 'team'].
+2020-05-18 10:55:26.602 -04:00 [INF] Handling a message: 'AddCandidate' [id: '596c9263-6141-4aab-aa87-7489d17f2160'] with correlation id: '4b02345e-8270-4e51-ae30-820ff9ef1ae7'. 
+2020-05-18 10:55:26.696 -04:00 [INF] Profile with ID [ea2aaa3c-4857-4296-a22f-2d212e4f1743] was ADDED to the Team with ID : [4785ea30-990b-11ea-8f88-09e3db092a41] as a [Candidate]
+2020-05-18 10:55:26.698 -04:00 [INF] Handled a message: 'AddCandidate' [id: '596c9263-6141-4aab-aa87-7489d17f2160'] with correlation id: '4b02345e-8270-4e51-ae30-820ff9ef1ae7'. 
+2020-05-18 10:55:54.051 -04:00 [INF] Received a message with id: '015460cc-0ffa-43be-95db-374c1bbb9251', correlation id: 'ba13a669-1dbe-4275-8c95-108a11ed40a6', timestamp: 0 [queue: 'team_job.services.profile/team.accept_candidate', routing key: 'accept_candidate', exchange: 'team'].
+2020-05-18 10:55:54.057 -04:00 [INF] Handling a message: 'AcceptCandidate' [id: '015460cc-0ffa-43be-95db-374c1bbb9251'] with correlation id: 'ba13a669-1dbe-4275-8c95-108a11ed40a6'. 
+2020-05-18 10:55:54.141 -04:00 [INF] Profile with ID [ea2aaa3c-4857-4296-a22f-2d212e4f1743] in Team with ID : [4785ea30-990b-11ea-8f88-09e3db092a41] as been promoted to [Member] status
+2020-05-18 10:55:54.143 -04:00 [INF] Handled a message: 'AcceptCandidate' [id: '015460cc-0ffa-43be-95db-374c1bbb9251'] with correlation id: 'ba13a669-1dbe-4275-8c95-108a11ed40a6'. 
+2020-05-18 11:00:29.096 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/64f6d010-06a6-4d03-9fd8-bed9af04304f  
+2020-05-18 11:00:29.099 -04:00 [INF] CORS policy execution successful.
+2020-05-18 11:00:29.100 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 11:00:29.102 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 11:00:29.146 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 11:00:29.153 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 48.067ms
+2020-05-18 11:00:29.158 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 11:00:29.161 -04:00 [INF] Request finished in 64.0115ms 200 application/json
+2020-05-18 11:25:19.377 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/ea2aaa3c-4857-4296-a22f-2d212e4f1743  
+2020-05-18 11:25:19.397 -04:00 [INF] CORS policy execution successful.
+2020-05-18 11:25:19.407 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 11:25:19.422 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 11:25:19.797 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 11:25:19.799 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 371.30670000000003ms
+2020-05-18 11:25:19.801 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 11:25:19.802 -04:00 [INF] Request finished in 425.89300000000003ms 200 application/json
+2020-05-18 11:26:06.308 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/api/profile/get/64f6d010-06a6-4d03-9fd8-bed9af04304f  
+2020-05-18 11:26:06.309 -04:00 [INF] CORS policy execution successful.
+2020-05-18 11:26:06.311 -04:00 [INF] Executing endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 11:26:06.313 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TeamJob.Services.Profile.DTO.ProfileDto]] GetProfile(System.Guid, TeamJob.Services.Profile.Queries.GetProfile) on controller TeamJob.Services.Profile.Controllers.ProfileController (TeamJob.Services.Profile).
+2020-05-18 11:26:06.358 -04:00 [INF] Executing ObjectResult, writing value of type 'TeamJob.Services.Profile.DTO.ProfileDto'.
+2020-05-18 11:26:06.361 -04:00 [INF] Executed action TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile) in 44.260600000000004ms
+2020-05-18 11:26:06.374 -04:00 [INF] Executed endpoint 'TeamJob.Services.Profile.Controllers.ProfileController.GetProfile (TeamJob.Services.Profile)'
+2020-05-18 11:26:06.375 -04:00 [INF] Request finished in 67.90690000000001ms 200 application/json
