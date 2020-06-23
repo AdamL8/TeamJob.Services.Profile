@@ -10,8 +10,6 @@ namespace TeamJob.Services.Profile.Queries.Validations
         {
             RuleFor(x => x.Role)
                 .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotNull().WithMessage("Role cannot be empty")
-                .NotEmpty().WithMessage("Role cannot be empty")
                 .Must(IsValidRole).WithMessage("Invalid Role");
         }
 
