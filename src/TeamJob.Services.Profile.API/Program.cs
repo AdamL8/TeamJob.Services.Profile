@@ -4,6 +4,7 @@ using Convey;
 using Convey.Logging;
 using Convey.Types;
 using Convey.WebApi;
+using Convey.WebApi.CQRS;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,16 +42,16 @@ namespace TeamJob.Services.Profile.API
                     .Configure(app => app
                     .UseCors("CorsPolicy")
                     .UseInfrastructure()
-                    .UseEndpoints(endpoints => endpoints
+                    .UseDispatcherEndpoints(endpoints => endpoints
                         .Get("", ctx => ctx.Response.WriteAsync(ctx.RequestServices.GetService<AppOptions>().Name))
                         .Get<GetProfiles, IEnumerable<UserProfileDetailsDto>>("api/profile")
                         .Get<GetProfile, UserProfileDetailsDto>("api/profile/{id}")
-                        .Put<UpdateProfile>("api/profile/update",
-                            (cmd, ctx) => ctx.Response.Created($"api/profile/{cmd.Id}"))
+                        .Put<UpdateProfile>("api/profile",
+                            afterDispatch: (cmd, ctx) => ctx.Response.Created($"api/profile/{cmd.Id}"))
                         .Post<CompleteUserProfileRegistration>("api/profile/complete",
-                            (cmd, ctx) => ctx.Response.Created($"api/profile/{cmd.Id}"))
-                        .Delete<DeleteProfile>("api/profile/delete/{id}",
-                            (cmd, ctx) => ctx.Response.NoContent())
+                            afterDispatch: (cmd, ctx) => ctx.Response.Created($"api/profile/{cmd.Id}"))
+                        .Delete<DeleteProfile>("api/profile/{id}",
+                            afterDispatch: (cmd, ctx) => ctx.Response.NoContent())
 
                 ))
                 .UseLogging()

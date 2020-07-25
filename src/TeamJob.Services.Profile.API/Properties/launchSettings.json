@@ -14,7 +14,7 @@
         "ASPNETCORE_ENVIRONMENT": "local"
       }
     },
-    "TeamJob.Services.Identity": {
+    "TeamJob.Services.Profile": {
       "commandName": "Project",
       "launchBrowser": false,
       "applicationUrl": "http://localhost:5002",

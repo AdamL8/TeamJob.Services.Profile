@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Convey.Persistence.MongoDB;
@@ -50,8 +51,9 @@ namespace TeamJob.Services.Profile.Infrastructure.Mongo.Repositories
 
         public async Task<List<UserProfile>> GetAllAsync()
         {
-            var profiles = _repository.Collection?.AsQueryable();
-            return await profiles.Select(x => x.AsEntity()).ToListAsync();
+            var documents = await _repository.FindAsync(_ => true);
+
+            return documents.Select(x => x.AsEntity()).ToList();
         }
     }
 }

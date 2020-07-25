@@ -25,17 +25,20 @@ namespace TeamJob.Services.Profile.Infrastructure.Mongo.Queries
 
         public async Task<IEnumerable<UserProfileDetailsDto>> HandleAsync(GetProfiles query)
         {
-            var documents = _userProfileRepository.Collection.AsQueryable();
-
-            if (string.IsNullOrEmpty(query.Role) == false)
+            try
             {
-                var profileRole = Enum.Parse<Role>(query.Role);
-                documents       = Queryable.Where(documents, p => p.Role == profileRole) as IMongoQueryable<UserProfileDocument>;
+                var documents = string.IsNullOrEmpty(query.Role)
+                    ? await _userProfileRepository.FindAsync(p => true)
+                    : await _userProfileRepository.FindAsync(p => p.Role == Enum.Parse<Role>(query.Role));
+
+                return documents.Select(p => p.AsDetailsDto());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
 
-            var profiles = await documents.ToListAsync();
-
-            return profiles.Select(p => p.AsDetailsDto());
         }
     }
 }
