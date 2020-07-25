@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/TeamJob.Services.Profile/bin/Debug/netcoreapp3.0/TeamJob.Services.Profile.dll",
+            "program": "${workspaceFolder}/src/TeamJob.Services.Profile.API/bin/Debug/netcoreapp3.1/TeamJob.Services.Profile.API.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/TeamJob.Services.Profile",
+            "cwd": "${workspaceFolder}/src/TeamJob.Services.Profile.API",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

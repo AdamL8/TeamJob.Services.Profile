@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>d39f1894-7883-4f22-98c3-2743a10f8032</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey" Version="0.4.327" />
+    <PackageReference Include="Convey.Logging" Version="0.4.327" />
+    <PackageReference Include="Convey.WebApi" Version="0.4.327" />
+    <PackageReference Include="Convey.WebApi.CQRS" Version="0.4.327" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TeamJob.Services.Profile.Application\TeamJob.Services.Profile.Application.csproj" />
+    <ProjectReference Include="..\TeamJob.Services.Profile.Infrastructure\TeamJob.Services.Profile.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
