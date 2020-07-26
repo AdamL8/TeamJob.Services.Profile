@@ -30,6 +30,7 @@ GET {{url}}/profile
 ###
 POST {{url}}/profile/complete
 Content-Type: application/json
+
 {
   "Id" : "{{profileId}}",
   "PersonalInformation" : 
@@ -67,6 +68,7 @@ Content-Type: application/json
 ###
 PUT {{url}}/profile
 Content-Type: application/json
+
 {
   "Id" : "{{profileId}}",
   "PersonalInformation" : 
@@ -104,6 +106,7 @@ Content-Type: application/json
 ###
 DELETE  {{url}}/profile/{{profileId}}
 Content-Type: application/json
+
 {
   "Id" : "{{profileId}}"
 }
