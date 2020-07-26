@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using TeamJob.Services.Profile.Application.Exceptions;
 using TeamJob.Services.Profile.Application.Services;
 using TeamJob.Services.Profile.Core.Entities;
+using TeamJob.Services.Profile.Core.Exceptions;
 using TeamJob.Services.Profile.Core.Repositories;
 
 namespace TeamJob.Services.Profile.Application.Events.External.Handlers

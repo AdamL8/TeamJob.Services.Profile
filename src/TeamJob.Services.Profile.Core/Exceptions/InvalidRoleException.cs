@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamJob.Services.Profile.Application.Exceptions
+namespace TeamJob.Services.Profile.Core.Exceptions
 {
-    public class InvalidRoleException : AppException
+    public class InvalidRoleException : DomainException
     {
         public override string Code { get; } = "service.profile.exception.invalid_role";
 

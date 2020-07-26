@@ -37,7 +37,7 @@ namespace TeamJob.Services.Profile.Application.Commands.Handlers
 
             if (userProfile.State is State.Valid)
             {
-                throw new UserProfileAlreadyRegisteredException(command.Id);
+                throw new UserProfileAlreadyCompletedException(command.Id);
             }
 
             if (Enum.TryParse<Role>(command.Role, true, out var role) == false)
