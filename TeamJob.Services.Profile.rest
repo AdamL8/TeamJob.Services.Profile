@@ -1,0 +1,112 @@
+@url = http://localhost:5002/api
+
+@profileId = 00000000-0000-0000-0000-000000000000
+
+@firsName = "Jhon"
+@lastName = "Smith"
+@dateOfBirth = 00000
+@cellPhoneNumber = "123-456-7890"
+@homePhoneNumber = "123-456-7890"
+@country = "Canada"
+@province = "Quebec"
+@city = "Montreal"
+@addressLine = "123 SomeStreet"
+@postalCode = "J1H3Z5"
+
+@minHours = 20
+@maxHours = 40
+@avgHours = 25
+@isAspiringLeader = true
+@isAspiringTrainer = false
+
+@role = "employee"
+
+###
+GET {{url}}/profile/{{profileId}}
+
+###
+GET {{url}}/profile
+
+###
+POST {{url}}/profile/complete
+Content-Type: application/json
+
+{
+  "Id" : "{{profileId}}",
+  "PersonalInformation" : 
+  {
+    "FirstName" : "{{firsName}}",
+    "LastName" : "{{lastName}}",
+    "ContactInformation" : 
+    {
+      "CellPhoneNumber" : "{{cellPhoneNumber}}",
+      "HomePhoneNumber" : "{{homePhoneNumber}}"
+    },
+    "Address" :
+    {
+      "Country" : "{{country}}",
+      "Province" : "{{province}}",
+      "City" : "{{city}}",
+      "AddressLine" : "{{addressLine}}",
+      "PostalCode" : "{{postalCode}}"
+    },
+    "DateOfBirth" : "{{dateOfBirth}}"
+  },
+  "SatisfactionProfile" :
+  {
+    "MinHours" : "{{minHours}}",
+    "MaxHours" : "{{maxHours}}",
+    "AvgHours" : "{{avgHours}}",
+    "IsAspiringLeader" : "{{isAspiringLeader}}",
+    "IsAspiringTrainer" : "{{isAspiringTrainer}}",
+    "Skills" : [],
+    "Limits" : []
+  },
+  "Role" : "{{role}}"
+}
+
+###
+PUT {{url}}/profile
+Content-Type: application/json
+
+{
+  "Id" : "{{profileId}}",
+  "PersonalInformation" : 
+  {
+    "FirstName" : "{{firsName}}",
+    "LastName" : "{{lastName}}",
+    "ContactInformation" : 
+    {
+      "CellPhoneNumber" : "{{cellPhoneNumber}}",
+      "HomePhoneNumber" : "{{homePhoneNumber}}"
+    },
+    "Address" :
+    {
+      "Country" : "{{country}}",
+      "Province" : "{{province}}",
+      "City" : "{{city}}",
+      "AddressLine" : "{{addressLine}}",
+      "PostalCode" : "{{postalCode}}"
+    },
+    "DateOfBirth" : "{{dateOfBirth}}"
+  },
+  "SatisfactionProfile" :
+  {
+    "MinHours" : "{{minHours}}",
+    "MaxHours" : "{{maxHours}}",
+    "AvgHours" : "{{avgHours}}",
+    "IsAspiringLeader" : "{{isAspiringLeader}}",
+    "IsAspiringTrainer" : "{{isAspiringTrainer}}",
+    "Skills" : [],
+    "Limits" : []
+  },
+  "Teams" : []
+}
+
+###
+DELETE  {{url}}/profile/{{profileId}}
+Content-Type: application/json
+
+{
+  "Id" : "{{profileId}}"
+}
