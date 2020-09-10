@@ -13,7 +13,7 @@ WORKDIR /src
 COPY ["src/TeamJob.Services.Profile.API/TeamJob.Services.Profile.API.csproj", "src/TeamJob.Services.Profile.API/"]
 RUN dotnet restore "src/TeamJob.Services.Profile.API/TeamJob.Services.Profile.API.csproj"
 COPY . .
-WORKDIR "/src/TeamJob.Services.Profile.API"
+WORKDIR "src/TeamJob.Services.Profile.API"
 RUN dotnet build "TeamJob.Services.Profile.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
