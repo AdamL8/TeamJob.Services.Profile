@@ -11,7 +11,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk AS build
 WORKDIR /src
 COPY ["src/TeamJob.Services.Profile.API/TeamJob.Services.Profile.API.csproj", "src/TeamJob.Services.Profile.API/"]
-RUN dotnet restore "TeamJob.Services.Profile.API/TeamJob.Services.Profile.API.csproj"
+RUN dotnet restore "src/TeamJob.Services.Profile.API/TeamJob.Services.Profile.API.csproj"
 COPY . .
 WORKDIR "/src/TeamJob.Services.Profile.API"
 RUN dotnet build "TeamJob.Services.Profile.API.csproj" -c Release -o /app/build
