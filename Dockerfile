@@ -22,4 +22,6 @@ RUN dotnet publish "TeamJob.Services.Profile.API.csproj" -c Release -o /app/publ
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS http://*:80
+ENV ASPNETCORE_ENVIRONMENT docker
 ENTRYPOINT ["dotnet", "TeamJob.Services.Profile.API.dll"]
