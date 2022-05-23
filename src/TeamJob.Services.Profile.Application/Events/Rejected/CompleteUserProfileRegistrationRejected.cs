@@ -7,11 +7,11 @@ namespace TeamJob.Services.Profile.Application.Events.Rejected
 {
     public class CompleteUserProfileRegistrationRejected : IRejectedEvent
     {
-        public Guid Id       { get; }
+        public string Id       { get; }
         public string Reason { get; }
         public string Code   { get; }
 
-        public CompleteUserProfileRegistrationRejected(Guid id, string reason, string code)
+        public CompleteUserProfileRegistrationRejected(string id, string reason, string code)
         {
             Id     = id;
             Reason = reason;

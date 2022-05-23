@@ -8,13 +8,13 @@ namespace TeamJob.Services.Profile.Application.Exceptions
     public class IncorrectTeamMemberStatusForUserProfileException : AppException
     {
         public override string Code { get; } = "service.profile.exception.incorrect_team_member_status_for_user_profile";
-        public Guid Id                         { get; }
-        public Guid TeamId                     { get; }
+        public string Id                         { get; }
+        public string TeamId                     { get; }
         public TeamMemberStatus ActualStatus   { get; }
         public TeamMemberStatus ExpectedStatus { get; }
 
-        public IncorrectTeamMemberStatusForUserProfileException(Guid             id,
-                                                                Guid             teamId,
+        public IncorrectTeamMemberStatusForUserProfileException(string             id,
+                                                                string             teamId,
                                                                 TeamMemberStatus actualStatus,
                                                                 TeamMemberStatus expectedStatus)
             : base($"Profile with id: {id} in team with id : {teamId} is NOT a {expectedStatus}. Actual status : {actualStatus}")

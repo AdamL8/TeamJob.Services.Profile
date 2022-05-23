@@ -24,12 +24,12 @@ namespace TeamJob.Services.Profile.Core.Entities
             set => _teams = new HashSet<Team>(value);
         }
 
-        public UserProfile(Guid id, string email, long createdAt)
+        public UserProfile(string id, string email, long createdAt)
             : this(id, email, null, null, Role.Undefined, State.Incomplete, Enumerable.Empty<Team>(), createdAt)
         {
         }
 
-        public UserProfile(Guid                id,
+        public UserProfile(string                id,
                            string              email,
                            PersonalInformation personalInformation,
                            SatisfactionProfile satisfactionProfile,
@@ -93,7 +93,7 @@ namespace TeamJob.Services.Profile.Core.Entities
 
         public bool AddTeam(Team team)
         {
-            if (team.Id == Guid.Empty)
+            if (team.Id == string.Empty)
             { return false; }
 
             _teams.Add(team);
@@ -102,16 +102,16 @@ namespace TeamJob.Services.Profile.Core.Entities
 
         public bool RemoveTeam(Team team)
         {
-            if (team.Id == Guid.Empty)
+            if (team.Id == string.Empty)
             { return false; }
 
             _teams.Remove(team);
             return true;
         }
 
-        public bool RemoveTeamById(Guid teamId)
+        public bool RemoveTeamById(string teamId)
         {
-            if (teamId == Guid.Empty)
+            if (teamId == string.Empty)
             { return false; }
 
             var foundTeam = _teams.SingleOrDefault(x => x.Id == teamId);

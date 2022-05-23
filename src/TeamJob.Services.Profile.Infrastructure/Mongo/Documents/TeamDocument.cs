@@ -7,7 +7,7 @@ namespace TeamJob.Services.Profile.Infrastructure.Mongo.Documents
 {
     public class TeamDocument
     {
-        public Guid Id                 { get; set; }
+        public string Id                 { get; set; }
         public string Name             { get; set; }
         public TeamMemberStatus Status { get; set; }
     }

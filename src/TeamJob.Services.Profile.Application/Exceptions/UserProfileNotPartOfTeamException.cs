@@ -7,10 +7,10 @@ namespace TeamJob.Services.Profile.Application.Exceptions
     public class UserProfileNotPartOfTeamException : AppException
     {
         public override string Code { get; } = "service.profile.exception.user_profile_not_part_of_team";
-        public Guid Id     { get; }
-        public Guid TeamId { get; }
+        public string Id     { get; }
+        public string TeamId { get; }
 
-        public UserProfileNotPartOfTeamException(Guid id, Guid teamId)
+        public UserProfileNotPartOfTeamException(string id, string teamId)
             : base($"User profile with id: {id} is not part of the team with id: {teamId}.")
         {
             Id     = id;

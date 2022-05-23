@@ -7,11 +7,11 @@ namespace TeamJob.Services.Profile.Application.Events
 {
     public class UserProfileStateChanged : IEvent
     {
-        public Guid Id              { get; }
+        public string Id              { get; }
         public string CurrentState  { get; }
         public string PreviousState { get; }
 
-        public UserProfileStateChanged(Guid id, string currentState, string previousState)
+        public UserProfileStateChanged(string id, string currentState, string previousState)
         {
             Id            = id;
             CurrentState  = currentState;

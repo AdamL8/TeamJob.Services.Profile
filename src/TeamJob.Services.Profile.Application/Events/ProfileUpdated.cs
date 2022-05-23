@@ -7,10 +7,10 @@ namespace TeamJob.Services.Profile.Application.Events
 {
     public class ProfileUpdated : IEvent
     {
-        public Guid Id     { get; }
+        public string Id     { get; }
         public string Role { get; }
 
-        public ProfileUpdated(Guid id, string role)
+        public ProfileUpdated(string id, string role)
         {
             Id   = id;
             Role = role;

@@ -9,13 +9,13 @@ namespace TeamJob.Services.Profile.Application.Commands
 {
     public class UpdateProfile : ICommand
     {
-        public Guid Id                                 { get; }
+        public string Id                                 { get; }
         public PersonalInformation PersonalInformation { get; }
         public SatisfactionProfile SatisfactionProfile { get; }
         public IEnumerable<Team> Teams                 { get; }
 
         [JsonConstructor]
-        public UpdateProfile(Guid                id,
+        public UpdateProfile(string                id,
                              PersonalInformation personalInformation,
                              SatisfactionProfile satisfactionProfile,
                              IEnumerable<Team>   teams)

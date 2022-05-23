@@ -9,13 +9,13 @@ namespace TeamJob.Services.Profile.Application.Commands
 {
     public class CompleteUserProfileRegistration : ICommand
     {
-        public Guid Id                                 { get; }
+        public string Id                                 { get; }
         public PersonalInformation PersonalInformation { get; }
         public SatisfactionProfile SatisfactionProfile { get; }
         public string Role                             { get; }
 
         [JsonConstructor]
-        public CompleteUserProfileRegistration(Guid                id,
+        public CompleteUserProfileRegistration(string                id,
                                                PersonalInformation personalInformation,
                                                SatisfactionProfile satisfactionProfile,
                                                string              role)
