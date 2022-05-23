@@ -9,10 +9,10 @@ namespace TeamJob.Services.Profile.Core.Exceptions
     {
         public override string Code { get; } = "service.profile.exception.cannot_change_user_profile_state";
 
-        public Guid Id     { get; }
+        public string Id     { get; }
         public State State { get; }
 
-        public CannotChangeUserProfileStateException(Guid id, State state)
+        public CannotChangeUserProfileStateException(string id, State state)
             : base($"Cannot change user profile: {id} state to: {state}.")
         {
             Id    = id;

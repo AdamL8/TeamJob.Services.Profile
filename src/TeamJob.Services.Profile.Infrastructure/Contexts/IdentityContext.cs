@@ -6,7 +6,7 @@ namespace TeamJob.Services.Profile.Infrastructure.Contexts
 {
     internal class IdentityContext : IIdentityContext
                                                   {
-        public Guid Id                            { get; }
+        public string Id                            { get; }
         public string Role                        { get; } = string.Empty;
         public bool IsAuthenticated               { get; }
         public bool IsAdmin                       { get; }
@@ -23,9 +23,7 @@ namespace TeamJob.Services.Profile.Infrastructure.Contexts
 
         internal IdentityContext(string id, string role, bool isAuthenticated, IDictionary<string, string> claims)
         {
-            Id              = Guid.TryParse(id, out var userId)
-                                ? userId
-                                : Guid.Empty;
+            Id              = id ?? string.Empty;
             Role            = role ?? string.Empty;
             IsAuthenticated = isAuthenticated;
             IsAdmin         = Role.Equals("admin", StringComparison.InvariantCultureIgnoreCase);
