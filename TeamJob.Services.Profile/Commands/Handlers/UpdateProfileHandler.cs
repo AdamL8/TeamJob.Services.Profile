@@ -12,11 +12,11 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 {
     public class UpdateProfileHandler : ICommandHandler<UpdateProfile>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<UpdateProfileHandler>       _logger;
 
-        public UpdateProfileHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public UpdateProfileHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                     IBusPublisher                       InBusPublisher,
                                     ILogger<UpdateProfileHandler>       InLogger)
         {

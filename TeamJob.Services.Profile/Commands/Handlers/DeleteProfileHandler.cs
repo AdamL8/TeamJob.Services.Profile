@@ -13,11 +13,11 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 {
     public class DeleteProfileHandler : ICommandHandler<DeleteProfile>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<DeleteProfileHandler>       _logger;
 
-        public DeleteProfileHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public DeleteProfileHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                     IBusPublisher                       InBusPublisher,
                                     ILogger<DeleteProfileHandler>       InLogger)
         {

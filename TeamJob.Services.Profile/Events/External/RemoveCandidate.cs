@@ -8,11 +8,11 @@ namespace TeamJob.Services.Profile.Events.External
     [Message(exchange: "team", external: true)]
     public class RemoveCandidate : IEvent
     {
-        public Guid ProfileId { get; }
-        public Guid TeamId    { get; }
+        public string ProfileId { get; }
+        public string TeamId    { get; }
 
         [JsonConstructor]
-        public RemoveCandidate(Guid profileId, Guid teamId)
+        public RemoveCandidate(string profileId, string teamId)
         {
             ProfileId = profileId;
             TeamId    = teamId;

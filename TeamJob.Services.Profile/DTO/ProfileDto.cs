@@ -6,7 +6,7 @@ namespace TeamJob.Services.Profile.DTO
 {
     public class ProfileDto
     {
-        public Guid Id                                 { get; set; }
+        public string Id                                 { get; set; }
         public PersonalInformation PersonalInformation { get; set; }
         public SatisfactionProfile SatisfactionProfile { get; set; }
         public string Role                             { get; set; }

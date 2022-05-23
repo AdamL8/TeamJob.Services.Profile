@@ -5,11 +5,11 @@ namespace TeamJob.Services.Profile.Domain
 {
     public class Team
     {
-        public Guid Id                 { get; private set; }
+        public string Id                 { get; private set; }
         public TeamMemberStatus Status { get; private set; }
 
         [JsonConstructor]
-        public Team(Guid id, TeamMemberStatus status)
+        public Team(string id, TeamMemberStatus status)
         {
             Id = id;
             Status = status;

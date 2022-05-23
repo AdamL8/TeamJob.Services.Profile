@@ -9,7 +9,7 @@ namespace TeamJob.Services.Profile.Exceptions
     {
         public override string Code { get; } = "profile_already_exists";
 
-        public ProfileAlreadyExistsException(Guid InProfileId)
+        public ProfileAlreadyExistsException(string InProfileId)
             : base($"Profile with ID [{InProfileId}] already exists.")
         {
         }

@@ -10,11 +10,11 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
 {
     public class AddCandidateHandler : IEventHandler<AddCandidate>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<AddCandidateHandler>        _logger;
 
-        public AddCandidateHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public AddCandidateHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                    IBusPublisher                       InBusPublisher,
                                    ILogger<AddCandidateHandler>        InLogger)
         {

@@ -12,11 +12,11 @@ namespace TeamJob.Services.Profile.Commands.Handlers
 {
     public class CreateProfileHandler : ICommandHandler<CreateProfile>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<CreateProfileHandler>       _logger;
 
-        public CreateProfileHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public CreateProfileHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                     IBusPublisher                       InBusPublisher,
                                     ILogger<CreateProfileHandler>       InLogger)
         {

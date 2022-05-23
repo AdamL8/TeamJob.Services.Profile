@@ -9,7 +9,7 @@ namespace TeamJob.Services.Profile.Exceptions
     {
         public override string Code { get; } = "profile_not_found";
 
-        public ProfileNotFoundException(Guid InProfileId)
+        public ProfileNotFoundException(string InProfileId)
             : base($"Profile with ID [{InProfileId}] was not found.")
         {
         }

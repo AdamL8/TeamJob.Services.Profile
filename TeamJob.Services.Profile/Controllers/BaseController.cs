@@ -9,9 +9,9 @@ namespace TeamJob.Services.Profile.Controllers
         protected bool IsAdmin
             => User.IsInRole("admin");
 
-        protected Guid UserId
+        protected string UserId
             => string.IsNullOrWhiteSpace(User?.Identity?.Name) ?
-                Guid.Empty :
-                Guid.Parse(User.Identity.Name);
+                string.Empty :
+                User.Identity.Name;
     }
 }

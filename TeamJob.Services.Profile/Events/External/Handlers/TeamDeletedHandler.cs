@@ -13,11 +13,11 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
 {
     public class TeamDeletedHandler : IEventHandler<TeamDeleted>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<TeamDeletedHandler>         _logger;
 
-        public TeamDeletedHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public TeamDeletedHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                   IBusPublisher                       InBusPublisher,
                                   ILogger<TeamDeletedHandler>         InLogger)
         {

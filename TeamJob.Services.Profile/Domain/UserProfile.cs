@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace TeamJob.Services.Profile.Domain
 {
-    public class UserProfile : IIdentifiable<Guid>
+    public class UserProfile : IIdentifiable<string>
     {
-        public Guid Id                                 { get; private set; }
+        public string Id                                 { get; private set; }
         public PersonalInformation PersonalInformation { get; private set; }
         public SatisfactionProfile SatisfactionProfile { get; private set; }
         public Role Role                               { get; private set; }
@@ -18,7 +18,7 @@ namespace TeamJob.Services.Profile.Domain
 
 
         [JsonConstructor]
-        public UserProfile(Guid                id,
+        public UserProfile(string                id,
                            PersonalInformation personalInformation,
                            SatisfactionProfile satisfactionProfile,
                            Role                role)
@@ -26,7 +26,7 @@ namespace TeamJob.Services.Profile.Domain
         {            
         }
 
-        public UserProfile(Guid                id,
+        public UserProfile(string                id,
                            PersonalInformation personalInformation,
                            SatisfactionProfile satisfactionProfile,
                            Role                role,
@@ -42,7 +42,7 @@ namespace TeamJob.Services.Profile.Domain
             UpdatedAt           = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         }
 
-        public bool RemoveTeam(Guid InTeamId)
+        public bool RemoveTeam(string InTeamId)
         {
             return Teams.RemoveAll(x => x.Id == InTeamId) > 0;
         }

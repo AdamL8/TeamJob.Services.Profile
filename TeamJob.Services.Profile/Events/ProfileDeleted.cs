@@ -7,13 +7,13 @@ namespace TeamJob.Services.Profile.Events
 {
     public class ProfileDeleted :IEvent
     {
-        public Guid Id            { get; }
-        public List<Guid> TeamIds { get; }
+        public string Id            { get; }
+        public List<string> TeamIds { get; }
         public string Role        { get; }
 
 
         [JsonConstructor]
-        public ProfileDeleted(Guid id, List<Guid> teamIds, string role)
+        public ProfileDeleted(string id, List<string> teamIds, string role)
         {
             Id      = id;
             TeamIds = teamIds;

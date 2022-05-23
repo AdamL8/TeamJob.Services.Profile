@@ -8,11 +8,11 @@ namespace TeamJob.Services.Profile.Events.External
     [Message(exchange: "team", external: true)]
     public class AcceptCandidate : IEvent
     {
-        public Guid ProfileId { get; }
-        public Guid TeamId    { get; }
+        public string ProfileId { get; }
+        public string TeamId    { get; }
 
         [JsonConstructor]
-        public AcceptCandidate(Guid profileId, Guid teamId)
+        public AcceptCandidate(string profileId, string teamId)
         {
             ProfileId = profileId;
             TeamId    = teamId;

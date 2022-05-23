@@ -11,11 +11,11 @@ namespace TeamJob.Services.Profile.Events.External
     [Message(exchange: "team", external: true)]
     public class TeamDeleted : IEvent
     {
-        public Guid Id      { get; }
-        public Guid OwnerId { get; }
+        public string Id      { get; }
+        public string OwnerId { get; }
 
         [JsonConstructor]
-        public TeamDeleted(Guid id, Guid ownerId)
+        public TeamDeleted(string id, string ownerId)
         {
             Id      = id;
             OwnerId = ownerId;

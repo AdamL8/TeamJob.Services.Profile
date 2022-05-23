@@ -7,13 +7,13 @@ namespace TeamJob.Services.Profile.Commands
 {
     public class CreateProfile : ICommand
     {
-        public Guid Id                                 { get; }
+        public string Id                                 { get; }
         public PersonalInformation PersonalInformation { get; }
         public SatisfactionProfile SatisfactionProfile { get; }
         public string Role                             { get; }
 
         [JsonConstructor]
-        public CreateProfile(Guid                id,
+        public CreateProfile(string                id,
                              PersonalInformation personalInformation,
                              SatisfactionProfile satisfactionProfile,
                              string              role)

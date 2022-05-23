@@ -31,7 +31,7 @@ namespace TeamJob.Services.Profile.Controllers
         [HttpGet("get/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<ProfileDto>> GetProfile([FromRoute]Guid id, GetProfile InQuery)
+        public async Task<ActionResult<ProfileDto>> GetProfile([FromRoute]string id, GetProfile InQuery)
         {
             return Ok(await _queryDispatcher.QueryAsync(InQuery.Bind(x => x.Id, id)));
         }
@@ -48,7 +48,7 @@ namespace TeamJob.Services.Profile.Controllers
         // DELETE api/profile/delete/{id}
         [HttpDelete("delete/{id}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult> DeleteProfile([FromRoute]Guid id, DeleteProfile InCommand)
+        public async Task<ActionResult> DeleteProfile([FromRoute]string id, DeleteProfile InCommand)
         {
             await _commandDispatcher.SendAsync(InCommand.Bind(x => x.Id, id));
 

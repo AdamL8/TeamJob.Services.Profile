@@ -6,10 +6,10 @@ namespace TeamJob.Services.Profile.Events
 {
     public class ProfileDeletedRejected : IEvent
     {
-        public Guid Id { get; }
+        public string Id { get; }
 
         [JsonConstructor]
-        public ProfileDeletedRejected(Guid id)
+        public ProfileDeletedRejected(string id)
         {
             Id = id;
         }

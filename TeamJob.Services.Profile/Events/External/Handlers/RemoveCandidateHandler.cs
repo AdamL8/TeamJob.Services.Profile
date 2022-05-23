@@ -10,11 +10,11 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
 {
     public class RemoveCandidateHandler : IEventHandler<RemoveCandidate>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<RemoveCandidateHandler>     _logger;
 
-        public RemoveCandidateHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public RemoveCandidateHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                       IBusPublisher                       InBusPublisher,
                                       ILogger<RemoveCandidateHandler>     InLogger)
         {

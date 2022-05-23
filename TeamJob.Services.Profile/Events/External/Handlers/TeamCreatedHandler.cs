@@ -12,11 +12,11 @@ namespace TeamJob.Services.Profile.Events.External.Handlers
 {
     public class TeamCreatedHandler : IEventHandler<TeamCreated>
     {
-        private readonly IMongoRepository<UserProfile, Guid> _profileRepository;
+        private readonly IMongoRepository<UserProfile, string> _profileRepository;
         private readonly IBusPublisher                       _busPublisher;
         private readonly ILogger<TeamCreatedHandler>         _logger;
 
-        public TeamCreatedHandler(IMongoRepository<UserProfile, Guid> InProfileRepository,
+        public TeamCreatedHandler(IMongoRepository<UserProfile, string> InProfileRepository,
                                       IBusPublisher                   InBusPublisher,
                                       ILogger<TeamCreatedHandler>     InLogger)
         {
