@@ -8,10 +8,10 @@ namespace TeamJob.Services.Profile.Application.Commands
 {
     public class DeleteProfile : ICommand
     {
-        public Guid Id { get; }
+        public string Id { get; }
 
         [JsonConstructor]
-        public DeleteProfile(Guid id)
+        public DeleteProfile(string id)
         {
             Id = id;
         }

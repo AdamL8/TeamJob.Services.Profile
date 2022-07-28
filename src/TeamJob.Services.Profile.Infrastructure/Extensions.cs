@@ -69,7 +69,7 @@ public static class Extensions
                    .AddMessageOutbox(o => o.AddMongo())
                    .AddMetrics()
                    .AddHandlersLogging()
-                   .AddMongoRepository<UserProfileDocument, Guid>("Profiles")
+                   .AddMongoRepository<UserProfileDocument, string>("Profiles")
                    .AddWebApiSwaggerDocs()
                    .AddSecurity();
 

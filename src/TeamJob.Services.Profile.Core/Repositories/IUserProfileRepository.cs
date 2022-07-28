@@ -7,8 +7,8 @@ namespace TeamJob.Services.Profile.Core.Repositories
 {
     public interface IUserProfileRepository
     {
-        Task<UserProfile> GetAsync(Guid id);
-        Task DeleteAsync(Guid id);
+        Task<UserProfile> GetAsync(string id);
+        Task DeleteAsync(string id);
         Task UpdateAsync(UserProfile userProfile);
         Task AddAsync(UserProfile userProfile);
         Task<List<UserProfile>> GetAllAsync();

@@ -14,21 +14,21 @@ namespace TeamJob.Services.Profile.Infrastructure.Mongo.Repositories
 {
     public class UserProfileRepository : IUserProfileRepository
     {
-        private readonly IMongoRepository<UserProfileDocument, Guid> _repository;
+        private readonly IMongoRepository<UserProfileDocument, string> _repository;
 
-        public UserProfileRepository(IMongoRepository<UserProfileDocument, Guid> repository)
+        public UserProfileRepository(IMongoRepository<UserProfileDocument, string> repository)
         {
             _repository = repository;
         }
 
-        public async Task<UserProfile> GetAsync(Guid id)
+        public async Task<UserProfile> GetAsync(string id)
         {
             var userProfile = await _repository.GetAsync(id);
 
             return userProfile?.AsEntity();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(string id)
         {
             await _repository.DeleteAsync(id);
         }

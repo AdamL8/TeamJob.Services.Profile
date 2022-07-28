@@ -5,9 +5,9 @@ namespace TeamJob.Services.Profile.Application.Exceptions
     public class UserProfileAlreadyCompletedException : AppException
     {
         public override string Code { get; } = "service.profile.exception.user_profile_already_completed";
-        public Guid UserProfile { get; }
+        public string UserProfile { get; }
         
-        public UserProfileAlreadyCompletedException(Guid userProfile) 
+        public UserProfileAlreadyCompletedException(string userProfile) 
             : base($"User profile with id: {userProfile} has already a completed registration.")
         {
             UserProfile = userProfile;

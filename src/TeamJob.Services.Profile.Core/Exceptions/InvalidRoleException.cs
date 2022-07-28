@@ -8,7 +8,7 @@ namespace TeamJob.Services.Profile.Core.Exceptions
     {
         public override string Code { get; } = "service.profile.exception.invalid_role";
 
-        public InvalidRoleException(Guid userId, string role, string requiredRole)
+        public InvalidRoleException(string userId, string role, string requiredRole)
             : base($"User profile will not be created for the user with id: {userId} " +
                    $"due to the invalid role: {role} (required: {requiredRole}).")
         {

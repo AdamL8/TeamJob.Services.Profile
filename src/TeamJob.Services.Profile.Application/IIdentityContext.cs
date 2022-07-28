@@ -5,7 +5,7 @@ namespace TeamJob.Services.Profile.Application
 {
     public interface IIdentityContext
     {
-        Guid Id                            { get; }
+        string Id                            { get; }
         string Role                        { get; }
         bool IsAuthenticated               { get; }
         bool IsAdmin                       { get; }

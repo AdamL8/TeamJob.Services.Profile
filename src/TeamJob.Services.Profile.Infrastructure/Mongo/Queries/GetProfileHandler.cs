@@ -11,9 +11,9 @@ namespace TeamJob.Services.Profile.Infrastructure.Mongo.Queries
 {
     public class GetProfileHandler : IQueryHandler<GetProfile, UserProfileDetailsDto>
     {
-        private readonly IMongoRepository<UserProfileDocument, Guid> _userProfileRepository;
+        private readonly IMongoRepository<UserProfileDocument, string> _userProfileRepository;
 
-        public GetProfileHandler(IMongoRepository<UserProfileDocument, Guid> userProfileRepository)
+        public GetProfileHandler(IMongoRepository<UserProfileDocument, string> userProfileRepository)
         {
             _userProfileRepository = userProfileRepository;
         }
