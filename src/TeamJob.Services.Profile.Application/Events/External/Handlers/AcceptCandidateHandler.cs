@@ -29,17 +29,12 @@ namespace TeamJob.Services.Profile.Application.Events.External.Handlers
             }
 
             var teamAlreadyMemberOf = profile.Teams.SingleOrDefault(x => x.Id == @event.TeamId);
-            if (teamAlreadyMemberOf is null)
+            if (teamAlreadyMemberOf is { })
             {
-                throw new UserProfileNotPartOfTeamException(profile.Id, @event.TeamId);
+                throw new UserProfileAlreadyInTeamException(@event.ProfileId, @event.TeamId, teamAlreadyMemberOf.Status);
             }
 
-            if (teamAlreadyMemberOf.Status != TeamMemberStatus.Candidate)
-            {
-                throw new IncorrectTeamMemberStatusForUserProfileException(profile.Id, @event.TeamId, teamAlreadyMemberOf.Status, TeamMemberStatus.Candidate);
-            }
-
-            teamAlreadyMemberOf.ChangeStatus(TeamMemberStatus.Member);
+            profile.AddTeam(new Team(@event.TeamId, "", TeamMemberStatus.Member));
 
             await _userProfileRepository.UpdateAsync(profile);
         }
